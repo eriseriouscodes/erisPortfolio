@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anmeldeformular</title>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4">Anmeldeformular</h2>
+    <form id="anmeldeForm" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="kursnummer" class="form-label">Kursnummer</label>
+        <input type="text" class="form-control" id="kursnummer" required>
+        <div class="invalid-feedback">Bitte geben Sie eine Kursnummer ein.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" required>
+        <div class="invalid-feedback">Bitte geben Sie Ihren Namen ein.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="vorname" class="form-label">Vorname</label>
+        <input type="text" class="form-control" id="vorname" required>
+        <div class="invalid-feedback">Bitte geben Sie Ihren Vornamen ein.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="geburtsdatum" class="form-label">Geburtsdatum</label>
+        <input type="date" class="form-control" id="geburtsdatum" required>
+        <div class="invalid-feedback">Bitte geben Sie Ihr Geburtsdatum ein.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required>
+        <div class="invalid-feedback">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="geschlecht" class="form-label">Geschlecht</label>
+        <select class="form-select" id="geschlecht" required>
+          <option value="" selected disabled>Bitte wählen</option>
+          <option value="männlich">Männlich</option>
+          <option value="weiblich">Weiblich</option>
+          <option value="divers">Divers</option>
+        </select>
+        <div class="invalid-feedback">Bitte wählen Sie ein Geschlecht aus.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="iban" class="form-label">IBAN</label>
+        <input type="text" class="form-control" id="iban" pattern="^[A-Z]{2}[0-9]{2}[A-Z0-9]{1,30}$" required>
+        <div class="invalid-feedback">Bitte geben Sie eine gültige IBAN ein.</div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Absenden</button>
+    </form>
+  </div>
+
+  <div class="container mt-5" id="reviewSection" style="display: none;">
+    <h2 class="mb-4">Überprüfen Sie Ihre Eingaben</h2>
+    <ul class="list-group">
+      <li class="list-group-item"><strong>Kursnummer:</strong> <span id="reviewKursnummer"></span></li>
+      <li class="list-group-item"><strong>Name:</strong> <span id="reviewName"></span></li>
+      <li class="list-group-item"><strong>Vorname:</strong> <span id="reviewVorname"></span></li>
+      <li class="list-group-item"><strong>Geburtsdatum:</strong> <span id="reviewGeburtsdatum"></span></li>
+      <li class="list-group-item"><strong>Email:</strong> <span id="reviewEmail"></span></li>
+      <li class="list-group-item"><strong>Geschlecht:</strong> <span id="reviewGeschlecht"></span></li>
+      <li class="list-group-item"><strong>IBAN:</strong> <span id="reviewIban"></span></li>
+    </ul>
+    <button class="btn btn-success mt-3" id="confirmBtn">Bestätigen und Herunterladen</button>
+  </div>
+
+<script src="script.js"></script>
+<footer>
+  <a href="https://github.com/eriseriouscodes/anmeldeformular" target="_blank" class="text-dark me-3 position-absolute bottom-0 start-50 translate-middle-x">
+    <i class="fab fa-github fa-2x"></i>
+</a>
+</footer>
+</body>
+</html>
